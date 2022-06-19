@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body bgcolor="#FF69B4">
-    <script>
-        alert("добро пожаловать в мир чила!!");
-    </script>
     <p class="no_war">нет войне! stop the war!</p>
+    <script>
+        if (sessionStorage.getItem('greeted') != 1)
+            alert("добро пожаловать в мир чила!!")
+        sessionStorage.setItem('greeted', 1);
+    </script>
     <div>
         <img class="marginauto" src="images/logo_6.svg"/>
     </div>
     <div class="container">
         <p>
-            <a href="clothes/index_clothes.html"><img src="images/frame_1.svg" width="300" height="300"></a>
-            <a href="accessories/index_accessories.html"><img src="images/frame_2.svg" width="300" height="300"></a>
-            <a href="family/index_family.html"><img src="images/frame_3.svg" width="300" height="300"></a>
+            <a href="clothes.html"><img src="images/frame_1.svg" width="300" height="300"></a>
+            <a href="accessories.html"><img src="images/frame_2.svg" width="300" height="300"></a>
+            <a href="family.html"><img src="images/frame_3.svg" width="300" height="300"></a>
             <img class="bottom" src="images/waves.gif"/>
         </p>
     </div>
