@@ -56,4 +56,33 @@ body, html {
     width: 300px;
 }
 
-  
+.container_acc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #ef74bd;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.container_acc img {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.container_acc div {
+    margin: 10px;
+}
+
+.title {
+    font-size: 250%;
+    margin-top: 0;
+}
+
+.description {
+    font-size: 150%;
+}
+
+.buy_button {
+    margin-bottom: 0;
+}
