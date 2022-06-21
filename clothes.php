@@ -1,12 +1,11 @@
 <?php 
+ include "database.php";
 
-include "database.php";
+$result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
 
-$result = mysqli_query($link, 'SELECT * FROM `catalog`');
-
-while($catalog = mysqli_fetch_assoc($result))
+while($good = mysqli_fetch_assoc($result))
 {
-    echo 'Название:', $catalog['title'], ' ', 'Картинка:', $catalog['image'], ' ', 'Размер:', $catalog['size'], ' ', 'Описание:', $catalog['description'], ' ', 'Цена:', $catalog['price'], 'лари';
+    echo 'Название:', $good['title'], ' ', 'Картинка:', $good['image_front '], ' ', 'Размер:', $good['size'], ' ', 'Описание:', $good['description'], ' ', 'Цена:', $good['price'], 'лари';
     echo '<br>';
 }
 
@@ -25,7 +24,22 @@ while($catalog = mysqli_fetch_assoc($result))
     <div>
         <img class="marginauto" src="images/logo_6.svg"/>
     </div>
-    <h1>привет <?php echo $login; ?></h1>
-    <h2>вы подключились к бд - <?php echo $name_db; ?></h2>
+    <?php
+        while($good = mysqli_fetch_assoc($result)) 
+        {
+            ?>
+            <div class="container_acc">
+                <img src="catalog/<?php echo $good['image_front']; ?>.jpeg" width="300" height="300">
+                <img src="catalog/<?php echo $good['image_back']; ?>.jpeg" width="300" height="300">
+                <div>
+                    <p class="title"> <?php echo $good['title']; ?> </p>
+                    <p class="description"> <?php echo $good['description']; ?> </p>
+                    <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾]</p>
+                    <button class="buy_button">🤩 💸 🛍</button>
+                </div>
+            </div>
+            <?php 
+        }
+     ?>
 </body>
 </html>
