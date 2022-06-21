@@ -3,12 +3,6 @@
 
 $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
 
-while($good = mysqli_fetch_assoc($result))
-{
-    echo 'Название:', $good['title'], ' ', 'Картинка:', $good['image_front '], ' ', 'Размер:', $good['size'], ' ', 'Описание:', $good['description'], ' ', 'Цена:', $good['price'], 'лари';
-    echo '<br>';
-}
-
  ?>
 <!doctype html>
 <html>
