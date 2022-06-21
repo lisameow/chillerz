@@ -1,6 +1,6 @@
 <?php 
  include "database.php";
-$result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
+$result = mysqli_query($induction, 'SELECT * FROM `catalog_accessories`');
  ?>
 
 <!doctype html>
@@ -9,8 +9,8 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="/styles.css">
-	<title>clothes</title>
+	<link rel="stylesheet" href="styles.css">
+	<title>accessories</title>
 </head>
 <body bgcolor="#FF69B4">
     <p class="no_war">нет войне! stop the war!</p>
@@ -28,7 +28,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
                 <div>
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
-                    <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾]</p>
+                    <p class="size_price">[ <?php echo $good['price']; ?> ₾]</p>
                     <button class="buy_button">🤩 💸 🛍</button>
                 </div>
             </div>
