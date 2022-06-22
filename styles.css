@@ -119,11 +119,3 @@ body, html {
     background: #f7c3e2;
     cursor: pointer;
 }
-
-.buy_button:hover {
-    background: #f8d8eb
-}
-
-.buy_button:active {
-    background: #ffffda
-}

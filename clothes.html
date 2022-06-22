@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<title>clothes</title>
+</head>
+<body bgcolor="#FF69B4">
+    <p class="no_war">нет войне! stop the war!</p>
+    <div>
+        <img class="marginauto" src="images/logo_6.svg"/>
+    </div>
+    <script>
+        let item = [];
+        function save_to_storage(id)
+        {
+            document.getElementById(id).disabled = 'true';
+            item.push(id);
+            localStorage.setItem('basket', item);
+        }
+    </script>
+
+    <div class="container_acc">
+        <img src="catalog/1a.jpeg" width="300" height="300">
+        <img src="catalog/1b.jpeg" width="300" height="300">
+        <div>
+            <p class="title">Руня</p>
+            <p class="description">Хорошая кошечка</p>
+            <p class="size_price">[S]<br>[999₾]</p>
+            <button class="buy_button" id="1" onclick="save_to_storage(1);">🤩 💸 🛍</button>
+        </div>
+    </div>
+
+    <div class="container_acc">
+        <img src="catalog/2a.jpeg" width="300" height="300">
+        <img src="catalog/2b.jpeg" width="300" height="300">
+        <div>
+            <p class="title">Буся</p>
+            <p class="description">Хорошая кошечка</p>
+            <p class="size_price">[S]<br>[999₾]</p>
+            <button class="buy_button" id="2" onclick="save_to_storage(2);">🤩 💸 🛍</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>

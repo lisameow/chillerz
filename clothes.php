@@ -17,7 +17,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
     <div>
         <img class="marginauto" src="images/logo_6.svg"/>
     </div>
-    
+
     <?php
         while($good = mysqli_fetch_assoc($result)) 
         {
@@ -28,7 +28,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
                 <div>
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
-                    <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾]</p>
+                    <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾ ]</p>
                     <button class="buy_button">🤩 💸 🛍</button>
                 </div>
             </div>
