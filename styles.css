@@ -91,6 +91,7 @@ body, html {
     margin-top: 0;
     margin-left: 10px;
     margin-bottom: 20px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .description {
@@ -99,6 +100,7 @@ body, html {
     margin-left: 10px;
     margin-top: 0;
     margin-bottom: 0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .size_price {
@@ -106,6 +108,7 @@ body, html {
     text-align: right;
     margin-right: 10px;
     margin-top: 10px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .buy_button {
@@ -118,4 +121,105 @@ body, html {
     padding: 1px 17px 2px;
     background: #f7c3e2;
     cursor: pointer;
+}
+
+.container_basket {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.container_basket img {
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.container_basket div {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    -ms-flex-preferred-size: 300px;
+        flex-basis: 300px; 
+    background-color: #ee9dce; 
+    border-radius: 10px;
+    height: 300px;
+    position: relative;
+}
+
+@media screen and (min-width: 600px) {
+    .delete_item {
+        width: 940px;
+    }
+
+    .delete_item p {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .delete_item {
+        width: 300px;
+    }
+
+    .delete_item p {
+        font-size: 20px;
+    }
+}
+
+.delete_item{
+    height: 45px;
+    background-color: #f9bde2;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 10px;
+    border: 4px solid #ee9dce;
+    cursor: pointer;
+}
+
+.delete_item p {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font: "monospace";
+}
+
+.anketa{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.anketa h1{
+    
+    width: 100%;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.anketa h3{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.anketa input {
+    
 }

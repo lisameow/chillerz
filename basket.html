@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="styles.css">
-	<title>clothes</title>
+	<title>basket</title>
 </head>
 <body bgcolor="#FF69B4">
     <p class="no_war">нет войне! stop the war!</p>
@@ -13,41 +13,38 @@
         <img class="marginauto" src="images/logo_6.svg"/>
     </div>
 
-
-    <script>
-        let item = [];
-        function save_to_storage(id)
-        {
-            document.getElementById(id).disabled = 'true';
-            item.push(id);
-            localStorage.setItem('basket', item);
-            el = document.getElementById(id);
-            el.style.background = '#f6daeb';
-        }
-    </script>
-
-    <div class="container_acc">
+    <div class="container_basket">
         <img src="https://drive.google.com/uc?export=view&id=1iQeQca4mJUEf6zHxu4hVTyKnRXdhQcxa" width="300" height="300">
-        <img src="catalog/1b.jpeg" width="300" height="300">
+        <img src="https://drive.google.com/uc?export=view&id=1iQeQca4mJUEf6zHxu4hVTyKnRXdhQcxa" width="300" height="300">
         <div>
             <p class="title">Руня</p>
             <p class="description">Хорошая кошечка</p>
             <p class="size_price">[S]<br>[999₾]</p>
-            <button class="buy_button" id="1" onclick="save_to_storage(1);">🤩 💸 🛍</button>
         </div>
     </div>
+    <button class="delete_item">
+        <p>больше не хочу купить ;(</p>
+    </button>
 
-    <div class="container_acc">
-        <img src="catalog/2a.jpeg" width="300" height="300">
-        <img src="catalog/2b.jpeg" width="300" height="300">
+    <div class="container_basket">
+        <img src="https://drive.google.com/uc?export=view&id=1iQeQca4mJUEf6zHxu4hVTyKnRXdhQcxa" width="300" height="300">
+        <img src="https://drive.google.com/uc?export=view&id=1iQeQca4mJUEf6zHxu4hVTyKnRXdhQcxa" width="300" height="300">
         <div>
-            <p class="title">Буся</p>
+            <p class="title">Руня</p>
             <p class="description">Хорошая кошечка</p>
             <p class="size_price">[S]<br>[999₾]</p>
-            <button class="buy_button" id="2" onclick="save_to_storage(2);">🤩 💸 🛍</button>
         </div>
     </div>
+    <button class="delete_item">
+        <p>больше не хочу купить ;(</p>
+    </button>
 
+    <div class="anketa">
+        <h1>Анкета для подружек</h1>
+        <h3>тебя зовут
+            <input type="text" size="20" required>
+        </h3>
+    </div>
     
 </body>
 </html>
