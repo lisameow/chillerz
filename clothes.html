@@ -20,6 +20,8 @@
             document.getElementById(id).disabled = 'true';
             item.push(id);
             localStorage.setItem('basket', item);
+            el = document.getElementById(id);
+            el.style.background = '#f6daeb';
         }
     </script>
 
