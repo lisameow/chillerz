@@ -34,8 +34,8 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
         {
             ?>
             <div class="container_acc">
-                <img src="catalog/<?php echo $good['image_front']; ?>.jpeg" width="300" height="300">
-                <img src="catalog/<?php echo $good['image_back']; ?>.jpeg" width="300" height="300">
+                <img src="<?php echo $good['image_front']; ?>" width="300" height="300">
+                <img src="<?php echo $good['image_back']; ?>" width="300" height="300">
                 <div>
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
