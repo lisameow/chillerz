@@ -206,20 +206,79 @@ body, html {
     width: 100%;
 }
 
-.anketa h1{
+.anketa h2{
     
     width: 100%;
     text-align: center;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.anketa h3{
+.anketa form{
     margin: auto;
     width: 100%;
     text-align: center;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.anketa input {
-    
+.anketa form input{
+    width: 340px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 120%;
+    border: 0px;
+    background-color: #fbfcac;
+    padding: 0px;
+    outline: none;
+    padding-left: 10px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.anketa form input:focus{
+    background-color: #fcfe8d;
+    border: 0px;
+    padding-left: 10px;
+}
+
+::-webkit-input-placeholder{
+    color:#5d5d5d;
+    opacity: 0.9;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    padding-left: 1px;
+}
+
+::-moz-placeholder{
+    color:#5d5d5d;
+    opacity: 0.9;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+:-moz-placeholder{
+    color:#5d5d5d;
+    opacity: 0.9;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+:-ms-input-placeholder{
+    color:#5d5d5d;
+    opacity: 0.9;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.anketa button{
+    width: 360px;
+    height: 70px;
+    font-size: 150%;
+    border-radius: 20px;
+    border-width: 0;
+    padding: 1px 17px 2px;
+    background: #f7c3e2;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 200%;
 }

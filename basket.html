@@ -8,6 +8,18 @@
 	<title>basket</title>
 </head>
 <body bgcolor="#FF69B4">
+    <script>
+        function remove_storage() {
+            localStorage.clear();
+            window.location.reload();
+        }
+
+        function delete_item(id) {
+            document.getElementById(id).disabled = 'true';
+        }
+    </script>
+
+
     <p class="no_war">нет войне! stop the war!</p>
     <div>
         <img class="marginauto" src="images/logo_6.svg"/>
@@ -22,7 +34,7 @@
             <p class="size_price">[S]<br>[999₾]</p>
         </div>
     </div>
-    <button class="delete_item">
+    <button class="delete_item" id="1" onclick="delete_item(id);">
         <p>больше не хочу купить ;(</p>
     </button>
 
@@ -35,15 +47,22 @@
             <p class="size_price">[S]<br>[999₾]</p>
         </div>
     </div>
-    <button class="delete_item">
+    <button class="delete_item" id="2" onclick="delete_item(id);">
         <p>больше не хочу купить ;(</p>
     </button>
 
     <div class="anketa">
-        <h1>Анкета для подружек</h1>
-        <h3>тебя зовут
-            <input type="text" size="20" required>
-        </h3>
+        <h2>🌸 Анкета для подружек 🌸</h2>
+        <form>
+            <input type="text" required placeholder="тебя зовут *"> <br>
+            <input type="text" required placeholder="твой телеграм *"> <br>
+            <input type="text" placeholder="твой любимый цвет"> <br>
+            <input type="text" placeholder="твоё любимое блюдо"> <br>
+            <input type="text" placeholder="твоё супергеройское имя"> <br>
+        </form>
+        <button onclick="remove_storage();">
+            оТПрАвИТь!!
+        </button>
     </div>
     
 </body>

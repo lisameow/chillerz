@@ -21,8 +21,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_clothes`');
 
     <script>
         let item = [];
-        function save_to_storage(id)
-        {
+        function save_to_storage(id) {
             document.getElementById(id).disabled = 'true';
             item.push(id);
             localStorage.setItem('basket_clothes', item);
