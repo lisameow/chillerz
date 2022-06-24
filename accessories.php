@@ -1,6 +1,6 @@
 <?php 
  include "database.php";
-$result = mysqli_query($induction, 'SELECT * FROM `catalog_accessories`');
+$result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `available` = 1 AND `type` = 'accessories'');
  ?>
 
 <!doctype html>
@@ -20,12 +20,12 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog_accessories`');
     </div>
 
     <script>
-        let item = [];
+        let items = [];
         function save_to_storage(id)
         {
             document.getElementById(id).disabled = 'true';
-            item.push(id);
-            localStorage.setItem('basket_accessories', item);
+            items.push(id);
+            localStorage.setItem('basket', items);
         }
     </script>
 
