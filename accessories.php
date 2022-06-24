@@ -1,6 +1,6 @@
 <?php 
  include "database.php";
-$result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `available` = 1 AND `type` = 'accessories'');
+$result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 1 AND `available` = 1');
  ?>
 
 <!doctype html>
