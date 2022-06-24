@@ -20,11 +20,15 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
     </div>
 
     <script>
+        
         let items = [];
+
         function save_to_storage(id) {
             document.getElementById(id).disabled = 'true';
             items.push(id);
-            localStorage.setItem('basket', items);
+            localStorage.setItem('basket_clothes', items);
+            el = document.getElementById(id);
+            el.style.background = '#f6daeb';
         }
     </script>
 

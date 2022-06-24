@@ -15,12 +15,12 @@
 
 
     <script>
-        let item = [];
+        let items = [];
         function save_to_storage(id)
         {
             document.getElementById(id).disabled = 'true';
-            item.push(id);
-            localStorage.setItem('basket', item);
+            items.push(id);
+            localStorage.setItem('basket_clothes', items);
             el = document.getElementById(id);
             el.style.background = '#f6daeb';
         }
