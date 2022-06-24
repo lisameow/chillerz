@@ -7,15 +7,55 @@
     <link rel="stylesheet" href="styles.css">
 	<title>basket</title>
 </head>
-<body bgcolor="#FF69B4">
+<body bgcolor="#FF69B4" onload="get_items();">
     <script>
+        let all = [];
+        let clothes = localStorage.getItem('basket_clothes').split(",");
+        let accessories = localStorage.getItem('basket_accessories').split(",");
+
         function remove_storage() {
             localStorage.clear();
             window.location.reload();
         }
 
         function delete_item(id) {
-            document.getElementById(id).disabled = 'true';
+            document.getElementById('button_'+String(id)).disabled = 'true';
+            el = document.getElementById(id);
+            el.style.background = '#653959';
+            el.style.opacity = '0.4';
+            var index = all.indexOf(id);
+            all.splice(index, 1);
+
+            if (id in clothes) {
+                var index = clothes.indexOf(String(id));
+                clothes.splice(index, 1);
+                localStorage.removeItem('basket_clothes');
+                localStorage.setItem('basket_clothes', clothes);
+            } else {
+                var index = accessories.indexOf(String(id));
+                accessories.splice(index, 1);
+                localStorage.removeItem('basket_accessories');
+                localStorage.setItem('basket_accessories', clothes);
+            }
+            
+        }
+
+        function get_items() {
+            for (let i = 0; i < clothes.length; i++) {
+                if (clothes[i]>='0') {
+                    all.push(Number(clothes[i]));
+                }
+            }
+
+            for (let i = 0; i < accessories.length; i++) {
+                if (accessories[i]>='0') {
+                    all.push(Number(accessories[i]));
+                }
+            }
+
+            all_str = all.join(',');
+            document.cookie = "basket="+all_str;
+
         }
     </script>
 
@@ -33,21 +73,9 @@
             <p class="description">Хорошая кошечка</p>
             <p class="size_price">[S]<br>[999₾]</p>
         </div>
+        <nav class="cover" id="1"></nav>
     </div>
-    <button class="delete_item" id="1" onclick="delete_item(id);">
-        <p>больше не хочу купить ;(</p>
-    </button>
-
-    <div class="container_basket">
-        <img src="https://drive.google.com/uc?export=view&id=1iQeQca4mJUEf6zHxu4hVTyKnRXdhQcxa" width="300" height="300">
-        <img src="https://drive.google.com/uc?export=view&id=1iQeQca4mJUEf6zHxu4hVTyKnRXdhQcxa" width="300" height="300">
-        <div>
-            <p class="title">Руня</p>
-            <p class="description">Хорошая кошечка</p>
-            <p class="size_price">[S]<br>[999₾]</p>
-        </div>
-    </div>
-    <button class="delete_item" id="2" onclick="delete_item(id);">
+    <button class="delete_item" id="button_1" onclick="delete_item(1);">
         <p>больше не хочу купить ;(</p>
     </button>
 
