@@ -2,8 +2,8 @@
  include "database.php";
 
  if (isset($_COOKIE["basket"])) echo "basket: " . $_COOKIE["basket"] . "<br>";
- $basket = explode(',', $_COOKIE["basket"]);
- $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `id` in (1,2,5) ');
+ $basket = $_COOKIE["basket"];
+ $result = mysqli_query($induction, "SELECT * FROM `catalog` WHERE `id` in ($basket) " );
 
   ?>
 
