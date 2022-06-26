@@ -20,16 +20,36 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
     </div>
 
     <script>
-        
-        let items = [];
+
+        function button_status(id) {
+        let all_cookies = document.cookie.split('=');
+        if ('basket' == all_cookies[0]) {
+            var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
+        }
+        if (id in items) {
+            return "true";
+        } else {
+            return "false";
+        }
+    }
 
         function save_to_storage(id) {
-            document.getElementById(id).disabled = 'true';
-            items.push(id);
-            localStorage.setItem('basket_clothes', items);
-            el = document.getElementById(id);
-            el.style.background = '#f6daeb';
+        let all_cookies = document.cookie.split('=');
+        if ('basket' == all_cookies[0]) {
+            var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
+        } else {
+            var items = [];
         }
+        document.getElementById(id).disabled = 'true';
+
+        items.push(id);
+        let str_items = '';
+        str_items = items.join(',');
+        document.cookie = "basket="+str_items;
+
+        el = document.getElementById(id);
+        el.style.background = '#f6daeb'; 
+        } 
     </script>
 
     <?php
@@ -43,7 +63,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
                     <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾ ]</p>
-                    <button class="buy_button" id="<?php echo $good['id']; ?>" onclick="save_to_storage(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
+                    <button disabled="button_status(<?php echo $good['id']; ?>);" class="buy_button" id="<?php echo $good['id']; ?>" onclick="w(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
                 </div>
             </div>
             <?php 

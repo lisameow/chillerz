@@ -1,7 +1,7 @@
 <?php 
  include "database.php";
 
- if (isset($_COOKIE["basket"])) echo "basket: " . $_COOKIE["basket"] . "<br>";
+ if (isset($_COOKIE["basket"]));
  $basket = $_COOKIE["basket"];
  $result = mysqli_query($induction, "SELECT * FROM `catalog` WHERE `id` in ($basket) " );
 
@@ -9,11 +9,11 @@
 
 <script>
     let all = [];
-    let clothes = localStorage.getItem('basket_clothes').split(",");
-    let accessories = localStorage.getItem('basket_accessories').split(",");
-
-    function remove_storage() {
+    var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
+    
+    function remove_cookie() {
         localStorage.clear();
+        document.cookie = "basket=0";
         window.location.reload();
     }
 
@@ -25,36 +25,12 @@
         var index = all.indexOf(id);
         all.splice(index, 1);
 
-        if (id in clothes) {
-            var index = clothes.indexOf(String(id));
-            clothes.splice(index, 1);
-            localStorage.removeItem('basket_clothes');
-            localStorage.setItem('basket_clothes', clothes);
-        } else {
-            var index = accessories.indexOf(String(id));
-            accessories.splice(index, 1);
-            localStorage.removeItem('basket_accessories');
-            localStorage.setItem('basket_accessories', clothes);
-        }
+        var index = items.indexOf(String(id));
+        items.splice(index, 1);
+        let str_items = '';
+        str_items = items.join(',');
+        document.cookie = "basket="+str_items;
         
-    }
-
-    function get_items() {
-        for (let i = 0; i < clothes.length; i++) {
-            if (clothes[i]>='0') {
-                all.push(Number(clothes[i]));
-            }
-        }
-
-        for (let i = 0; i < accessories.length; i++) {
-            if (accessories[i]>='0') {
-                all.push(Number(accessories[i]));
-            }
-        }
-
-        all_str = all.join(',');
-        document.cookie = "basket="+all_str;
-
     }
 </script>
 
@@ -68,6 +44,7 @@
 	<title>basket</title>
 </head>
 <body bgcolor="#FF69B4" onload="get_items();">
+
     <p class="no_war">нет войне! stop the war!</p>
     <div>
         <img class="marginauto" src="images/logo_6.svg"/>
@@ -103,7 +80,7 @@
             <input type="text" placeholder="твоё любимое блюдо"> <br>
             <input type="text" placeholder="твоё супергеройское имя"> <br>
         </form>
-        <button onclick="remove_storage();">
+        <button onclick="remove_cookie();">
             оТПрАвИТь!!
         </button>
     </div>

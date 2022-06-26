@@ -20,16 +20,23 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 1 AND
     </div>
 
     <script>
-        let items = [];
-
-        function save_to_storage(id)
-        {
-            document.getElementById(id).disabled = 'true';
-            items.push(id);
-            localStorage.setItem('basket_accessories', items);
-            el = document.getElementById(id);
-            el.style.background = '#f6daeb';
+        function save_to_storage(id) {
+        let all_cookies = document.cookie.split('=');
+        if ('basket' == all_cookies[0]) {
+            var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
+        } else {
+            var items = [];
         }
+        document.getElementById(id).disabled = 'true';
+
+        items.push(id);
+        let str_items = '';
+        str_items = items.join(',');
+        document.cookie = "basket="+str_items;
+
+        el = document.getElementById(id);
+        el.style.background = '#f6daeb'; 
+        } 
     </script>
 
     
