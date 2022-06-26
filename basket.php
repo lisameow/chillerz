@@ -4,7 +4,20 @@
  if ($basket != '') {
     $result = mysqli_query($induction, "SELECT * FROM `catalog` WHERE `id` in ($basket) " );
  }
-  ?>
+ 
+ if(isset($_POST['name']) && isset($_POST['tg']) && isset($_POST['color']) && isset($_POST['food']) && isset($_POST['superhero']))
+ {
+     $name = $_POST['name'];
+     $tg = $_POST['tg'];
+     $color = $_POST['color'];
+     $food = $_POST['food'];
+     $superhero = $_POST['superhero'];
+
+     $query = "INSERT INTO orders VALUES (NULL, '{$name}', '{$tg}', '2', '{$color}', '{$food}', '{$superhero}')";
+     $induction->query($query);
+ }
+ 
+ ?>
 
 <script>
     let all = [];
@@ -13,7 +26,8 @@
     function remove_storage() {
         localStorage.clear();
         document.cookie = "basket=";
-        window.location.reload();
+        alert('спасибо за чиловый заказ!! в ближайшее время я свяжусь с вами');
+        //window.location.reload();
     }
 
     function delete_item(id) {
@@ -74,16 +88,16 @@
 
     <div class="anketa">
         <h2>🌸 Анкета для подружек 🌸</h2>
-        <form action="" method="POST">
+        <form action="basket.php" method="POST">
             <input type="text" name="name" required placeholder="тебя зовут *"> <br>
-            <input type="text" required placeholder="твой телеграм *"> <br>
-            <input type="text" placeholder="твой любимый цвет"> <br>
-            <input type="text" placeholder="твоё любимое блюдо"> <br>
-            <input type="text" placeholder="твоё супергеройское имя"> <br>
+            <input type="text" name="tg" required placeholder="твой телеграм *"> <br>
+            <input type="text" name="color" placeholder="твой любимый цвет"> <br>
+            <input type="text" name="food" placeholder="твоё любимое блюдо"> <br>
+            <input type="text" name="superhero" placeholder="твоё супергеройское имя"> <br>
+            <button type="submit" onclick="remove_storage();">
+                оТПрАвИТь!!
+            </button>
         </form>
-        <button type="submit" onclick="remove_storage();">
-            оТПрАвИТь!!
-        </button>
     </div>
     
 </body>
