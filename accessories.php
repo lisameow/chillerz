@@ -1,6 +1,6 @@
 <?php 
  include "database.php";
-$result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 1 AND `available` = 1');
+ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 1 AND `available` = 1');
  ?>
 
 <!doctype html>
@@ -22,7 +22,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 1 AND
     <script>
         function save_to_storage(id) {
         let all_cookies = document.cookie.split('=');
-        if ('basket' == all_cookies[0]) {
+        if ('basket' == all_cookies[0] && all_cookies[1] != '') {
             var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
         } else {
             var items = [];

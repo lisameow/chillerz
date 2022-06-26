@@ -1,17 +1,16 @@
 <?php 
  include "database.php";
-
- if (isset($_COOKIE["basket"]));
  $basket = $_COOKIE["basket"];
- $result = mysqli_query($induction, "SELECT * FROM `catalog` WHERE `id` in ($basket) " );
-
+ if ($basket != '') {
+    $result = mysqli_query($induction, "SELECT * FROM `catalog` WHERE `id` in ($basket) " );
+ }
   ?>
 
 <script>
     let all = [];
     var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
     
-    function remove_cookie() {
+    function remove_storage() {
         localStorage.clear();
         document.cookie = "basket=0";
         window.location.reload();
@@ -30,8 +29,8 @@
         let str_items = '';
         str_items = items.join(',');
         document.cookie = "basket="+str_items;
-        
     }
+
 </script>
 
 <!doctype html>
@@ -43,31 +42,33 @@
     <link rel="stylesheet" href="styles.css">
 	<title>basket</title>
 </head>
-<body bgcolor="#FF69B4" onload="get_items();">
+<body bgcolor="#FF69B4">
 
     <p class="no_war">нет войне! stop the war!</p>
     <div>
         <img class="marginauto" src="images/logo_6.svg"/>
     </div>
-
+    
     <?php
-        while($good = mysqli_fetch_assoc($result)) 
-        {
-            ?>
-            <div class="container_basket">
-                <img src="<?php echo $good['image_front']; ?>" width="300" height="300">
-                <img src="<?php echo $good['image_back']; ?>" width="300" height="300">
-                <div>
-                    <p class="title"><?php echo $good['title']; ?></p>
-                    <p class="description"><?php echo $good['description']; ?></p>
-                    <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ]</p>
+        if ($basket != '') { 
+            while($good = mysqli_fetch_assoc($result)) 
+            {
+                ?>
+                <div class="container_basket">
+                    <img src="<?php echo $good['image_front']; ?>" width="300" height="300">
+                    <img src="<?php echo $good['image_back']; ?>" width="300" height="300">
+                    <div>
+                        <p class="title"><?php echo $good['title']; ?></p>
+                        <p class="description"><?php echo $good['description']; ?></p>
+                        <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ]</p>
+                    </div>
+                    <nav class="cover" id="<?php echo $good['id']; ?>"></nav>
                 </div>
-                <nav class="cover" id="<?php echo $good['id']; ?>"></nav>
-            </div>
-            <button class="delete_item" id="button_<?php echo $good['id']; ?>" onclick="delete_item(<?php echo $good['id']; ?>);">
-                <p>больше не хочу купить ;(</p>
-            </button>
-            <?php
+                <button class="delete_item" id="button_<?php echo $good['id']; ?>" onclick="delete_item(<?php echo $good['id']; ?>);">
+                    <p>больше не хочу купить ;(</p>
+                </button>
+                <?php
+            }
         }
      ?>
 
@@ -80,7 +81,7 @@
             <input type="text" placeholder="твоё любимое блюдо"> <br>
             <input type="text" placeholder="твоё супергеройское имя"> <br>
         </form>
-        <button onclick="remove_cookie();">
+        <button onclick="remove_storage();">
             оТПрАвИТь!!
         </button>
     </div>

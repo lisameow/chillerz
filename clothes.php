@@ -13,29 +13,11 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
 	<title>clothes</title>
 </head>
 
-<body bgcolor="#FF69B4">
-    <p class="no_war">нет войне! stop the war!</p>
-    <div>
-        <img class="marginauto" src="images/logo_6.svg"/>
-    </div>
+<script>
 
-    <script>
-
-        function button_status(id) {
+    function save_to_storage(id) {
         let all_cookies = document.cookie.split('=');
-        if ('basket' == all_cookies[0]) {
-            var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
-        }
-        if (id in items) {
-            return "true";
-        } else {
-            return "false";
-        }
-    }
-
-        function save_to_storage(id) {
-        let all_cookies = document.cookie.split('=');
-        if ('basket' == all_cookies[0]) {
+        if ('basket' == all_cookies[0] && all_cookies[1] != '') {
             var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
         } else {
             var items = [];
@@ -50,7 +32,14 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
         el = document.getElementById(id);
         el.style.background = '#f6daeb'; 
         } 
-    </script>
+</script>
+
+<body bgcolor="#FF69B4">
+    <p class="no_war">нет войне! stop the war!</p>
+    <div>
+        <img class="marginauto" src="images/logo_6.svg"/>
+    </div>
+
 
     <?php
         while($good = mysqli_fetch_assoc($result)) 
@@ -63,7 +52,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
                     <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾ ]</p>
-                    <button disabled="button_status(<?php echo $good['id']; ?>);" class="buy_button" id="<?php echo $good['id']; ?>" onclick="w(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
+                    <button class="buy_button" id="<?php echo $good['id']; ?>" onclick="save_to_storage(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
                 </div>
             </div>
             <?php 
