@@ -57,5 +57,13 @@
             <?php 
         }
      ?>
+     <script>
+        var cookies = document.cookie.split('=')[1].split(',');
+        for (let i=0; i<cookies.length; i++) {
+            if (cookies[i] != 0) {
+                document.getElementById(cookies[i]).disabled = 'true';
+            }
+        }
+    </script>
 </body>
 </html>

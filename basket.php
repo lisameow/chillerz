@@ -12,7 +12,7 @@
     
     function remove_storage() {
         localStorage.clear();
-        document.cookie = "basket=0";
+        document.cookie = "basket=";
         window.location.reload();
     }
 
