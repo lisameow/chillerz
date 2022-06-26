@@ -32,7 +32,7 @@
         document.getElementById("order").value = items_str;
         alert('спасибо за чиловый заказ!! в ближайшее время я свяжусь с вами');
         document.cookie = "basket=";
-        //window.location.reload();
+        document.location.href = "https://chillerz.fun/";
     }
 
     function delete_item(id) {
