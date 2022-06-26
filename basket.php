@@ -5,16 +5,20 @@
     $result = mysqli_query($induction, "SELECT * FROM `catalog` WHERE `id` in ($basket) " );
  }
  
- if(isset($_POST['name']) && isset($_POST['tg']) && isset($_POST['color']) && isset($_POST['food']) && isset($_POST['superhero']))
+ if(isset($_POST['name']) && isset($_POST['tg']) && isset($_POST['color']) && isset($_POST['food']) && isset($_POST['superhero']) && isset($_POST['order']))
  {
      $name = $_POST['name'];
      $tg = $_POST['tg'];
      $color = $_POST['color'];
      $food = $_POST['food'];
      $superhero = $_POST['superhero'];
+     $order = $_POST['order'];
+     
+     $basket = $_COOKIE["basket"];
 
-     $query = "INSERT INTO orders VALUES (NULL, '{$name}', '{$tg}', '2', '{$color}', '{$food}', '{$superhero}')";
+     $query = "INSERT INTO orders VALUES (NULL, '{$name}', '{$tg}', '{$order}', '{$color}', '{$food}', '{$superhero}')";
      $induction->query($query);
+     
  }
  
  ?>
@@ -23,11 +27,12 @@
     let all = [];
     var items = document.cookie.match(/basket=(.+?)(;|$)/)[1].split(",");
     
-    function remove_storage() {
-        localStorage.clear();
-        document.cookie = "basket=";
+    function send() {
+        var items_str = document.cookie.match(/basket=(.+?)(;|$)/)[1];
+        document.getElementById("order").value = items_str;
         alert('спасибо за чиловый заказ!! в ближайшее время я свяжусь с вами');
-        //window.location.reload();
+        document.cookie = "basket=";
+        document.location.href = "https://chillerz.fun/";
     }
 
     function delete_item(id) {
@@ -44,6 +49,7 @@
         str_items = items.join(',');
         document.cookie = "basket="+str_items;
     }
+    
 
 </script>
 
@@ -87,14 +93,15 @@
      ?>
 
     <div class="anketa">
-        <h2>🌸 Анкета для подружек 🌸</h2>
+        <h2>🌸 Анкета для подружек 🌸 (и&nbsp;заказов)</h2>
         <form action="basket.php" method="POST">
             <input type="text" name="name" required placeholder="тебя зовут *"> <br>
             <input type="text" name="tg" required placeholder="твой телеграм *"> <br>
             <input type="text" name="color" placeholder="твой любимый цвет"> <br>
             <input type="text" name="food" placeholder="твоё любимое блюдо"> <br>
             <input type="text" name="superhero" placeholder="твоё супергеройское имя"> <br>
-            <button type="submit" onclick="remove_storage();">
+            <input type="hidden" name="order" id="order">
+            <button type="submit" onclick="send();">
                 оТПрАвИТь!!
             </button>
         </form>
