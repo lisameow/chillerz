@@ -50,7 +50,7 @@
                 <div>
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
-                    <p class="size_price">[ <?php echo $good['price']; ?> ₾]</p>
+                    <p class="size_price">[ <?php echo $good['price']; ?> ₾ ]</p>
                     <button class="buy_button" id="<?php echo $good['id']; ?>" onclick="save_to_storage(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
                 </div>
             </div>

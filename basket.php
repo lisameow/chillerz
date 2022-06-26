@@ -60,7 +60,7 @@
                     <div>
                         <p class="title"><?php echo $good['title']; ?></p>
                         <p class="description"><?php echo $good['description']; ?></p>
-                        <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ]</p>
+                        <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾ ]</p>
                     </div>
                     <nav class="cover" id="<?php echo $good['id']; ?>"></nav>
                 </div>
@@ -74,14 +74,14 @@
 
     <div class="anketa">
         <h2>🌸 Анкета для подружек 🌸</h2>
-        <form>
-            <input type="text" required placeholder="тебя зовут *"> <br>
+        <form action="" method="POST">
+            <input type="text" name="name" required placeholder="тебя зовут *"> <br>
             <input type="text" required placeholder="твой телеграм *"> <br>
             <input type="text" placeholder="твой любимый цвет"> <br>
             <input type="text" placeholder="твоё любимое блюдо"> <br>
             <input type="text" placeholder="твоё супергеройское имя"> <br>
         </form>
-        <button onclick="remove_storage();">
+        <button type="submit" onclick="remove_storage();">
             оТПрАвИТь!!
         </button>
     </div>
