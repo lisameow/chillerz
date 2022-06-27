@@ -16,7 +16,7 @@
 <body bgcolor="#FF69B4">
     <p class="no_war">нет войне! stop the war!</p>
     <div>
-        <img class="marginauto" src="images/logo_6.svg"/>
+        <a href="https://chillerz.fun" class="marginauto" ><img class="marginauto" src="images/logo_6.svg"/></a>
     </div>
 
     <script>
