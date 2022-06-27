@@ -85,6 +85,45 @@ body, html {
     position: relative;
 }
 
+.container_clothes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.container_clothes img {
+    margin: 0;
+    border: 2px dashed rgb(0, 0, 0);
+}
+
+.container_clothes div {
+    margin: 0;
+    -ms-flex-preferred-size: 300px;
+        flex-basis: 300px; 
+    background-color: #ffffff; 
+    height: 300px;
+    position: relative;
+    border: 2px dashed rgb(0, 0, 0);
+}
+
+.buy_button_clothes {
+    bottom: 10px;
+    right: 10px;
+    font-size: 150%;
+    position: absolute;
+    border-width: 0;
+    padding: 5px 17px 2px;
+    background: #ce4ce5;
+    cursor: pointer;
+}
+
 .title {
     font-size: 250%;
     text-align: left;
@@ -269,10 +308,9 @@ body, html {
 .anketa button{
     width: 360px;
     height: 70px;
-    font-size: 150%;
     border-radius: 20px;
     border-width: 0;
-    padding: 1px 17px 2px;
+    padding: 10px 17px 2px;
     background: #f7c3e2;
     cursor: pointer;
     margin-top: 50px;
@@ -282,6 +320,8 @@ body, html {
     transform: translate(-50%, 0);
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 200%;
+    display: flex;	
+    justify-content: center;
 }
 
 @media screen and (min-width: 600px) {

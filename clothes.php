@@ -45,14 +45,14 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
         while($good = mysqli_fetch_assoc($result)) 
         {
             ?>
-            <div class="container_acc">
-                <img src="<?php echo $good['image_front']; ?>" width="300" height="300">
-                <img src="<?php echo $good['image_back']; ?>" width="300" height="300">
+            <div class="container_clothes">
+                <img src="catalog/<?php echo $good['image_front']; ?>.jpeg" width="300" height="300">
+                <img src="catalog/<?php echo $good['image_back']; ?>.jpeg" width="300" height="300">
                 <div>
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
                     <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾ ]</p>
-                    <button class="buy_button" id="<?php echo $good['id']; ?>" onclick="save_to_storage(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
+                    <button class="buy_button_clothes" id="<?php echo $good['id']; ?>" onclick="save_to_storage(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
                 </div>
             </div>
             <?php 
