@@ -13,7 +13,7 @@
 }
 
 .marginauto {
-    margin: 20px auto 50px;
+    margin: 20px auto 20px;
     display: block;
     max-width: 506px;
     width: 100%;
@@ -125,29 +125,31 @@ body, html {
 }
 
 .title {
-    font-size: 250%;
+    font-size: 150%;
     text-align: left;
     margin-top: 0;
     margin-left: 10px;
+    margin-right: 30px;
     margin-bottom: 20px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .description {
-    font-size: 150%;
+    font-size: 130%;
     text-align: left;
     margin-left: 10px;
+    margin-right: 30px;
     margin-top: 0;
     margin-bottom: 0;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .size_price {
-    font-size: 150%;
+    font-size: 130%;
     text-align: right;
     margin-right: 10px;
     margin-top: 10px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .buy_button {
@@ -238,7 +240,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font: "monospace";
+    font: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .anketa{
@@ -250,14 +252,14 @@ body, html {
     
     width: 100%;
     text-align: center;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .anketa form{
     margin: auto;
     width: 100%;
     text-align: center;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .anketa form input{
@@ -271,7 +273,7 @@ body, html {
     padding: 0px;
     outline: none;
     padding-left: 10px;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .anketa form input:focus{
@@ -283,26 +285,26 @@ body, html {
 ::-webkit-input-placeholder{
     color:#5d5d5d;
     opacity: 0.9;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     padding-left: 1px;
 }
 
 ::-moz-placeholder{
     color:#5d5d5d;
     opacity: 0.9;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 :-moz-placeholder{
     color:#5d5d5d;
     opacity: 0.9;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 :-ms-input-placeholder{
     color:#5d5d5d;
     opacity: 0.9;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .anketa button{
@@ -310,15 +312,15 @@ body, html {
     height: 70px;
     border-radius: 20px;
     border-width: 0;
-    padding: 10px 17px 2px;
+    padding: 14px 17px 2px;
     background: #f7c3e2;
     cursor: pointer;
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 200%;
     display: flex;	
     justify-content: center;
@@ -344,4 +346,50 @@ body, html {
         color: #653959
     }
 
+}
+
+.empty_basket {
+    text-align: center;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.go_to_basket {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.go_to_basket img {
+    margin: 10px;
+}
+
+.go_to_basket_a {
+    margin: auto 0px;
+    font-size: calc(1rem + 1vw);
+    font-weight: 900;
+    color:rgb(255, 255, 255);
+    font-family: 'Optima', sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+
+.go_to_basket p {
+    margin: auto 10px;
+    font-size: calc(1rem + 1vw);
+    font-weight: 900;
+    color:rgb(255, 255, 255);
+    font-family: 'Optima', sans-serif;
+    text-align: center;
+    border: 3px dashed rgb(255, 255, 255);
+    padding: 5px;
 }

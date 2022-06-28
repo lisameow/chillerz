@@ -40,6 +40,11 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
         <a href="https://chillerz.fun" class="marginauto" ><img class="marginauto" src="images/logo_6.svg"/></a>
     </div>
 
+    <div class="go_to_basket">
+        <a href="https://chillerz.fun/basket.php"><img src="images/bicyclist.svg" height="100"></a>
+        <a href="https://chillerz.fun/basket.php" class="go_to_basket_a"><p>добавляй и<br>поехали в корзину</p></a>
+    </div>
+
 
     <?php
         while($good = mysqli_fetch_assoc($result)) 
