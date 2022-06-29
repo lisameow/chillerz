@@ -398,3 +398,23 @@ body, html {
     margin: 0 auto 40px; 
     height: 70px;
 }
+
+.baskets {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 600px) {
+    .baskets img {
+        width: 80px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .baskets img {
+        width: 40px;
+    }
+}
