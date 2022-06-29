@@ -19,6 +19,10 @@
         <a href="https://chillerz.fun" class="marginauto" ><img class="marginauto" src="images/logo_6.svg"/></a>
     </div>
 
+    <div width="100%">
+        <a href="https://chillerz.fun/basket.php" class="basket_acc"><img src="images/bascet_acc.svg" class="basket_acc"></a>
+    </div>
+
     <script>
         function save_to_storage(id) {
         let all_cookies = document.cookie.split('=');
@@ -47,7 +51,7 @@
             <div class="container_acc">
                 <img src="catalog/<?php echo $good['image_front']; ?>.jpeg" width="300" height="300">
                 <img src="catalog/<?php echo $good['image_back']; ?>.jpeg" width="300" height="300">
-                <div>
+                <div style="background-color: <?php echo $good['color']; ?>;">
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
                     <p class="size_price">[ <?php echo $good['price']; ?> ₾ ]</p>
