@@ -20,7 +20,7 @@
     </div>
 
     <div width="100%">
-        <a href="https://chillerz.fun/basket.php" class="basket_acc"><img src="images/bascet_acc.svg" class="basket_acc"></a>
+        <a href="https://chillerz.fun/basket" class="basket_acc"><img src="images/bascet_acc.svg" class="basket_acc"></a>
     </div>
 
     <script>

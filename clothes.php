@@ -41,8 +41,8 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
     </div>
 
     <div class="go_to_basket">
-        <a href="https://chillerz.fun/basket.php"><img src="images/bicyclist.svg" height="100"></a>
-        <a href="https://chillerz.fun/basket.php" class="go_to_basket_a"><p>добавляй и<br>поехали в корзину</p></a>
+        <a href="https://chillerz.fun/basket"><img src="images/bicyclist.svg" height="100"></a>
+        <a href="https://chillerz.fun/basket" class="go_to_basket_a"><p>добавляй и<br>поехали в корзину</p></a>
     </div>
 
 
