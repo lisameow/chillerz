@@ -105,14 +105,14 @@
 
     <div class="anketa">
         <h2>🌸 Анкета для подружек 🌸 (и&nbsp;заказов)</h2>
-        <form action="basket.php" method="POST">
+        <form action="basket.php" method="POST" onSubmit="return send();">
             <input type="text" name="name" required placeholder="тебя зовут *"> <br>
             <input type="text" name="tg" required placeholder="твой телеграм *"> <br>
             <input type="text" name="color" placeholder="твой любимый цвет"> <br>
             <input type="text" name="food" placeholder="твоё любимое блюдо"> <br>
             <input type="text" name="superhero" placeholder="твоё супергеройское имя"> <br>
             <input type="hidden" name="order" id="order">
-            <button type="submit" onclick="send();">
+            <button type="submit">
                 оТПрАвИТь!!
             </button>
         </form>
