@@ -69,6 +69,17 @@
         <a href="https://chillerz.fun" class="marginauto" ><img class="marginauto" src="images/logo_6.svg"/></a>
     </div>
     
+    <div class="empty_basket" id="empty_basket"></div>
+    
+    <script>
+        var basket_state = document.cookie.match(/basket=(.+?)(;|$)/);
+        if (basket_state==null) {
+            el = document.getElementById('empty_basket');
+            el.innerHTML = 'корзина пока пуста;( <br>';
+            el.innerHTML += 'скорее добавляйте товары или просто заполняйте анкету';
+        }
+    </script>
+    
     <?php
         if ($basket != '') { 
             while($good = mysqli_fetch_assoc($result)) 
