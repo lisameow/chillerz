@@ -9,8 +9,9 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="/styles.css">
-	<title>clothes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<title>shirts</title>
 </head>
 
 <script>
