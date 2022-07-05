@@ -10,8 +10,8 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<title>shirts</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <script>
@@ -35,7 +35,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
         } 
 </script>
 
-<body bgcolor="#FF69B4">
+<body class="back_clothes">
     <p class="no_war">нет войне! stop the war!</p>
     <div>
         <a href="https://chillerz.fun" class="marginauto" ><img class="marginauto" src="images/logo_6.svg"/></a>
@@ -72,8 +72,7 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
             }
         }
     </script>
-
-    <div style="height: 20px;"></div>
     
+    <div style="height: 20px;"></div>
 </body>
 </html>

@@ -10,11 +10,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<title>no_shirts</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
-<body bgcolor="#FF69B4">
+<body background="images/wallpaper_2.jpeg">
     <p class="no_war">нет войне! stop the war!</p>
     <div>
         <a href="https://chillerz.fun" class="marginauto" ><img class="marginauto" src="images/logo_6.svg"/></a>
@@ -55,7 +55,7 @@
                 <div style="background-color: <?php echo $good['color']; ?>;">
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
-                    <p class="size_price">[ <?php echo $good['price']; ?> ₾ ]</p>
+                    <p class="size_price">[ <?php echo $good['size']; ?> ]<br>[ <?php echo $good['price']; ?> ₾ ]</p>
                     <button class="buy_button" id="<?php echo $good['id']; ?>" onclick="save_to_storage(<?php echo $good['id']; ?>);">🤩 💸 🛍</button>
                 </div>
             </div>
@@ -70,8 +70,8 @@
             }
         }
     </script>
-
+    
     <div style="height: 20px;"></div>
-
+    
 </body>
 </html>
