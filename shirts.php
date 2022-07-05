@@ -72,5 +72,8 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
             }
         }
     </script>
+
+    <div style="height: 20px;"></div>
+    
 </body>
 </html>
