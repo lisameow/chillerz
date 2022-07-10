@@ -50,8 +50,8 @@
         {
             ?>
             <div class="container_acc">
-                <img src="catalog/<?php echo $good['image_front']; ?>.jpeg" width="300" height="300">
-                <img src="catalog/<?php echo $good['image_back']; ?>.jpeg" width="300" height="300">
+                <img src="catalog/<?php echo $good['image_front']; ?>.png" width="300" height="300">
+                <img src="catalog/<?php echo $good['image_back']; ?>.png" width="300" height="300">
                 <div style="background-color: <?php echo $good['color']; ?>;">
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>

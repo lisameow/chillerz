@@ -52,8 +52,8 @@ $result = mysqli_query($induction, 'SELECT * FROM `catalog` WHERE `type` = 0 AND
         {
             ?>
             <div class="container_clothes">
-                <img src="catalog/<?php echo $good['image_front']; ?>.jpeg" width="300" height="300">
-                <img src="catalog/<?php echo $good['image_back']; ?>.jpeg" width="300" height="300">
+                <img src="catalog/<?php echo $good['image_front']; ?>.png" width="300" height="300">
+                <img src="catalog/<?php echo $good['image_back']; ?>.png" width="300" height="300">
                 <div>
                     <p class="title"> <?php echo $good['title']; ?> </p>
                     <p class="description"> <?php echo $good['description']; ?> </p>
